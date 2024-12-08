@@ -1,0 +1,69 @@
+/* App.css or styles.css */
+
+/* Center the search bar container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Make the input field large and responsive */
+.search-input {
+  width: 70%; /* Take 70% of the available width, adjust as necessary */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style for the search button */
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the links in the navigation bar */
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+/* Other general styles */
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+@keyframes slideIn {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 0;
+  }
+}
