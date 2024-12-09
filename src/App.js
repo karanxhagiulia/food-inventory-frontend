@@ -43,6 +43,7 @@ function App() {
         imageUrl,
         url,
       });
+      console.log(response); // Log the response object to see what you get back
 
       setSuccessMessage('Food added to inventory successfully!');
       setError('');
