@@ -157,7 +157,7 @@ function App() {
                       <div key={index} className="col-md-3 mb-4">
                         <div className="card h-100" style={{ display: 'flex', flexDirection: 'column' }}>
                           <img
-                            src={product.imageUrl || "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"}
+                            src={product.imageUrl || "/noimgavailable.jpg"}
                             className="card-img-top"
                             alt={product.name}
                             style={{
