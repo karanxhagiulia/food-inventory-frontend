@@ -4,36 +4,37 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Inventory from './components/Inventory'; // Import the new Inventory component
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [isSuccessBannerVisible, setIsSuccessBannerVisible] = useState(false);
-
+  const [searchTerm, setSearchTerm] = useState('');  // State for holding the search input value
+  const [products, setProducts] = useState([]);  // State for holding the list of products from the API
+  const [error, setError] = useState('');  // State for error messages
+  const [successMessage, setSuccessMessage] = useState('');  // State for success messages (e.g., when adding a product)
+  const [isSuccessBannerVisible, setIsSuccessBannerVisible] = useState(false);  // State to control the visibility of the success banner
+  
   const handleSearch = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/api/food/search`, {
         params: { search: searchTerm },
       });
-      setProducts(response.data);
-      setError('');
-      setSuccessMessage('');
+      setProducts(response.data);  // Set the products state with the search results
+      setError('');  // Clear any previous error message
+      setSuccessMessage('');  // Clear any success message
     } catch (err) {
-      setError('Error fetching products, please try again!');
-      setProducts([]);
-      setSuccessMessage('');
+      setError('Error fetching products, please try again!');  // Set an error message if the request fails
+      setProducts([]);  // Clear the products list
+      setSuccessMessage('');  // Clear any success message
     }
   };
+  
 
   const handleAddToInventory = async (product) => {
     try {
       const { name, ingredients, brands, quantity, categories, imageUrl, url } = product;
-
+  
       if (!name || !brands || !quantity) {
-        setError('Missing required fields');
+        setError('Missing required fields');  // Check for required fields and show error if any are missing
         return;
       }
-
+  
       const response = await axios.post('http://localhost:5000/api/food/add', {
         name,
         ingredients,
@@ -43,21 +44,24 @@ function App() {
         imageUrl,
         url,
       });
-      console.log(response); // Log the response object to see what you get back
-
-      setSuccessMessage('Food added to inventory successfully!');
-      setError('');
-      setIsSuccessBannerVisible(true); // Show the success banner
-
-      // Automatically hide the success banner after 3 seconds
+  
+      console.log(response);  // Log the response from the server (for debugging)
+  
+      setSuccessMessage('Food added to inventory successfully!');  // Set success message
+      setError('');  // Clear any previous error messages
+      setIsSuccessBannerVisible(true);  // Show the success banner
+  
+      // Hide the success banner after 3 seconds
       setTimeout(() => {
         setIsSuccessBannerVisible(false);
       }, 3000);
     } catch (err) {
-      setError('Error adding food to inventory');
-      setSuccessMessage('');
+      setError('Error adding food to inventory');  // Show error message if the post request fails
+      setSuccessMessage('');  // Clear success message if the post request fails
     }
   };
+  
+//Rendering the app. I had loots of issues with trying to make a nice UI because of the images and the grid, so I'm using inline CSS
 
   return (
     <Router>
