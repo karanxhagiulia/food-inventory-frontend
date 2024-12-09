@@ -26,12 +26,12 @@ The application leverages the **Open Food Facts API** to retrieve food product d
 
 ## API Endpoints
 
-•	GET /api/food/search: Fetch food products based on a search term from the Open Food Facts API.
-•	POST /api/food/add: Add a new food product to the MongoDB database.
-•	GET /api/food/inventory: Retrieve all food products from the inventory, aggre-gated by name and brand.
-•	DELETE /api/food/delete/:id: Delete a specific product from the inventory by ID.
-•	GET /api/food/:id: Fetch a specific product from the inventory by ID.
-•	PATCH /api/food/update/:id: Update a product's expiry date by ID.
+- 	GET /api/food/search: Fetch food products based on a search term from the Open Food Facts API.
+- 	POST /api/food/add: Add a new food product to the MongoDB database.
+- 	GET /api/food/inventory: Retrieve all food products from the inventory, aggre-gated by name and brand.
+- 	DELETE /api/food/delete/:id: Delete a specific product from the inventory by ID.
+- 	GET /api/food/:id: Fetch a specific product from the inventory by ID.
+- 	PATCH /api/food/update/:id: Update a product's expiry date by ID.
 
 ## License
 
