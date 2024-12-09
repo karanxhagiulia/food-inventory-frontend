@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Food Inventory Management Application
+University Project.
+## Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Food Inventory Management** application is a web-based system designed to help users keep track of food products and manage their inventory effectively. This application allows users to search for food products, add them to an inventory, update product details, delete items, and visualize the inventory data.
 
-## Available Scripts
+The application leverages the **Open Food Facts API** to retrieve food product data and stores information in a **MongoDB database** for inventory management.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Search Food Products**: Search for food products using a keyword and retrieve detailed information like product name, ingredients, brands, and more.
+- **Add Products to Inventory**: Add new products to the inventory, including details such as name, quantity, brands, ingredients, and expiration date.
+- **View Inventory**: Display all products in the inventory, with aggregation to show the total quantity of duplicate items.
+- **Delete Products**: Remove products from the inventory by their unique ID.
+- **Update Expiry Date**: Update the expiry date for any product in the inventory.
+  
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js**: JavaScript runtime used to run the backend server.
+- **Express.js**: Web framework for building the API.
+- **MongoDB**: NoSQL database used to store the food inventory data.
+- **Axios**: Library used to make HTTP requests to the **Open Food Facts API**.
+- **CORS**: Middleware to handle cross-origin requests.
+- **Body-Parser**: Middleware to parse incoming request bodies as JSON.
+- **dotenv**: For managing environment variables.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API Endpoints
 
-### `npm test`
+•	GET /api/food/search: Fetch food products based on a search term from the Open Food Facts API.
+•	POST /api/food/add: Add a new food product to the MongoDB database.
+•	GET /api/food/inventory: Retrieve all food products from the inventory, aggre-gated by name and brand.
+•	DELETE /api/food/delete/:id: Delete a specific product from the inventory by ID.
+•	GET /api/food/:id: Fetch a specific product from the inventory by ID.
+•	PATCH /api/food/update/:id: Update a product's expiry date by ID.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
 
-### `npm run build`
+This project is for personal use and educational purposes only. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Commercial use of this code is strictly prohibited. You may not use, sell, or distribute this code for commercial purposes without explicit permission from the author.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
